@@ -19,8 +19,6 @@
                 <!-- Header -->
                     <header id="header">
                         <div class="inner">
-                            <h1>Hamza Khokhar's Portfolio</h1> <!-- Updated header to match -->
-
                             <!-- Nav -->
                                 <nav>
                                     <ul>
@@ -36,19 +34,33 @@
                         <h2>Menu</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="CV.html">CV</a></li> <!-- Updated to match -->
+                            <li><a href="CV.html">CV</a></li>
                         </ul>
                     </nav>
 
                 <!-- Main -->
                     <div id="main">
                         <div class="inner">
-                            <h1>Generic Page</h1>
-                            <span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-                            <!-- Content from the generic.html remains unchanged -->
-                            <p>Donec eget ex magna...</p>
-                            <!-- Additional paragraphs omitted for brevity -->
-                        </div>
+                            <h1>Bug1 and Bug2 Algorithms</h1>
+                            <p>The Bug1 and Bug2 algorithms are pathfinding algorithms used by robots to navigate from a starting point
+                                 to a goal point while avoiding obstacles. These algorithms are simple yet effective for environments
+                                  with unknown obstacles. To implement this I created a wall following algorithm using a PID controller
+                                  . I  took sensor readings from the robots sonar sensors to do this, and also provided telemetry.
+                                </p>
+        
+                         <h3>Bug1 Algorithm</h3>
+                         <p>The Bug1 algorithm operates by having the robot move straight towards the goal until an obstacle is encountered. Upon encountering an obstacle, the robot follows the boundary of the obstacle (while maintaining contact) until it can resume its direct path to the goal. The robot circumnavigates the obstacle until reaching the point closest to the goal that it has encountered so far, and then it leaves the obstacle boundary to move directly toward the goal again.</p>
+        
+                         <h3>Bug2 Algorithm</h3>
+                         <p>The Bug2 algorithm improves upon Bug1 by using the concept of the "m-line", which is a straight line drawn from the start point to the goal. Like Bug1, the robot moves directly toward the goal until it hits an obstacle. Then, it follows the obstacle's boundary. However, rather than finding the closest point to the goal around the obstacle, Bug2 waits until it intersects the m-line again before attempting to leave the obstacle's boundary to move directly towards the goal. This method can be more efficient than Bug1 because it potentially minimizes detours caused by following the obstacle's perimeter.</p>
+        
+                        <p>Both algorithms have their advantages and limitations. Bug1 can be more straightforward to implement and can perform better in environments where the closest point to the goal around the obstacle is a good heuristic. Bug2, on the other hand, can be more efficient in direct paths but might get trapped in concave obstacles if the m-line crosses the obstacle's interior. My implementation of these algorithms in Java using the Webots simulation environment aimed to explore these behaviors in various scenarios.</p>
+                        <h2>Technologies Used:</h2>
+                        <ul>
+                            <li>Java</li>
+                            <li>Webots</li>
+                        </ul>
+                    </div>
                     </div>
 
                 <!-- Footer -->

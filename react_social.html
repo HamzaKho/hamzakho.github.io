@@ -4,17 +4,45 @@
         <title>React Social Media</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <!-- Bootstrap CSS for Carousel -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            #carouselExampleIndicators .carousel-item img {
+                height: 500px; 
+                object-fit: cover;
+                width: 100%;
+            }
+            .carousel-control-next,
+        .carousel-control-prev /*, .carousel-indicators */ {
+            filter: invert(60%);
+        }
+            h1 {
+		font-size: 2.75em;
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 0 0 1em 0;
+		letter-spacing: -0.035em;
+	}
+    h2, h3, h4, h5, h6 {
+		font-weight: 900;
+		line-height: 1.5;
+		margin: 0 0 0.2em 0;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+	}
+    h2 {
+		font-size: 1.5em;
+	}
+
+        </style>
     </head>
     <body class="is-preload">
         <div id="wrapper">
             <!-- Header -->
                 <header id="header">
                     <div class="inner">
-                        <h1>Hamza Khokhar's Portfolio</h1>
                         <!-- Nav -->
                             <nav>
                                 <ul>
@@ -30,14 +58,13 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="CV.html">CV</a></li>
-                        <li><a href="elements.html">Elements</a></li>
                     </ul>
                 </nav>
 
             <!-- Main -->
                 <div id="main">
                     <div class="inner">
-                        <h1>React Social Media</h1>
+                        <h1>React Social Media Platform with Machine Learning Recommendations</h1>
                         <!-- Bootstrap Carousel -->
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -66,23 +93,74 @@
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
                             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-next-icon" aria-hidden="false"></span>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
                         <!-- End of Carousel -->
 
-                        <p>This page showcases the React Social Media project with a carousel feature for image display.</p>
+                        <p>These are screenshots of my project. It is a social media platform created using 
+                            React for the frontend, and Node.js for the backend. It fetches the games from the RAWG API, 
+                            and displays them to users where they can interact with them by seeing other images,
+                            leaving reviews and favouriting them.</p>
+                        <p>These interactions train the machine learning algorithm (made using python) to recommend games.</p>
+                        <p>Users can also search for and add friends, message them and see their reviews and favourite games.</p>
+                        <p>Users passwords are encrypted and stored securely on a SQL server.</p>
+                        <p>The code for this can be seen on my <a href="https://github.com/HamzaKho/COMP390">github page</a></p>
+                        
+                        <!-- Technologies Used List -->
+                        <h2>Technologies Used:</h2>
+                        <ul>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>SQL</li>
+                            <li>Python scikit-learn</li>
+                            <li>Git</li>
+                        </ul>
+                        <!-- End of Technologies Used List -->
                     </div>
+                    </div>
+                    <footer id="footer">
+                        <div class="inner">
+                            <section>
+                                <h2>Get in touch</h2>
+                                <form method="post" action="">
+                                    <div class="fields">
+                                        <div class="field half">
+                                            <input type="text" name="name" id="name" placeholder="Name" />
+                                        </div>
+                                        <div class="field half">
+                                            <input type="email" name="email" id="email" placeholder="Email" />
+                                        </div>
+                                        <div class="field">
+                                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send" class="primary" /></li>
+                                    </ul>
+                                </form>
+                            </section>
+                            <section>
+                                <h2>Follow</h2>
+                                <ul class="icons">
+                                    <li><a href="https://github.com/HamzaKho" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                                    <li><a href="https://www.linkedin.com/in/hamza-khokhar-28934a253/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li> <!-- Corrected label -->
+                                </ul>
+                            </section>
+                            <ul class="copyright">
+                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
+                        </div>
+                    </footer>
+                    
                 </div>
-
-            <!-- Footer -->
-                <!-- Footer content remains the same as in the generic.html template -->
-        </div>
+        
+                </div>
 
         <!-- Scripts -->
             <script src="assets/js/jquery.min.js"></script>

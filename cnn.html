@@ -19,8 +19,6 @@
                 <!-- Header -->
                     <header id="header">
                         <div class="inner">
-                            <h1>Hamza Khokhar's Portfolio</h1> <!-- Updated header to match -->
-
                             <!-- Nav -->
                                 <nav>
                                     <ul>
@@ -36,18 +34,28 @@
                         <h2>Menu</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="CV.html">CV</a></li> <!-- Updated to match -->
+                            <li><a href="CV.html">CV</a></li>
                         </ul>
                     </nav>
 
                 <!-- Main -->
                     <div id="main">
                         <div class="inner">
-                            <h1>Generic Page</h1>
-                            <span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-                            <!-- Content from the generic.html remains unchanged -->
-                            <p>Donec eget ex magna...</p>
-                            <!-- Additional paragraphs omitted for brevity -->
+                            <h1>Convolutional Neural Network</h1>
+                            <p>The network architecture I used for my CNN is the ResNet model. ResNet (short for residual network) is a type of CNN (convolutional neural Network) that uses ‘skip connections’ that jumps over some layers. This allows for deeper networks.</p>
+                            <p2>Structure</p2>
+                            <ul>
+                                <li>Initial Convolution – the model starts with a Conv2d convolution layer that has 64 filters, then a batch normalization. This processes the input.</li>
+                                <li>Residual Blocks – My model consists of 4 layers of BasicBlock modules. Each layer has varying numbers of blocks and filters (64>128>256>512) respectively. Each BasicBlock has 2 convolutional layers and batch normalizations. They also include a jump connection.</li>
+                                <li>Adaptive pooling – After the residual blocks adaptive average pooling reduces the spatial dimensions to 1x1.</li>
+                                <li>Fully connected Layer – There is a fully connected layer at the end that outputs the probabilities of the input being in each class.</li>
+                            </ul>
+                            <h2>Technologies Used:</h2>
+                            <ul>
+                                <li>Python</li>
+                                <li>PyTorch</li>
+                                <li>ResNet</li>
+                            </ul>
                         </div>
                     </div>
 
