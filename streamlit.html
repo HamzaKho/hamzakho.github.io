@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Portfolio</title> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            .carousel-container {
+                position: relative;
+                max-width: 100%;
+                margin: 20px 0;
+                overflow: hidden;
+                height: 400px; 
+            }
+        
+            .carousel-slide {
+                display: none;
+                width: 100%;
+                height: 100%;
+            }
+        
+            .carousel-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain; 
+                border-radius: 10px;
+            }
+        
+            .carousel-active {
+                display: block;
+            }
+        
+            .carousel-controls {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+                padding: 0 10px;
+            }
+        
+            .carousel-controls span {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                padding: 8px;
+                border-radius: 50%;
+                font-size: 18px;
+                user-select: none;
+            }
+        </style>
+        
+    </head>
+    <body class="is-preload">
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <div class="inner">
+                            <!-- Nav -->
+                                <nav>
+                                    <ul>
+                                        <li><a href="#menu">Menu</a></li>
+                                    </ul>
+                                </nav>
+
+                        </div>
+                    </header>
+
+                <!-- Menu -->
+                    <nav id="menu">
+                        <h2>Menu</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="CV.html">CV</a></li>
+                        </ul>
+                    </nav>
+
+                <!-- Main -->
+                    <div id="main">
+                        <div class="inner">
+                            <h1>Spotify Analysis Dashboard</h1>
+
+                            <!-- Carousel -->
+                            <div class="carousel-container">
+                                <div class="carousel-slide carousel-active">
+                                    <img src="images/streamlit/streamlit1.png" alt="Streamlit Image 1">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/streamlit/streamlit2.png" alt="Streamlit Image 2">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/streamlit/streamlit3.png" alt="Streamlit Image 3">
+                                </div>
+                                <div class="carousel-controls">
+                                    <span onclick="plusSlides(-1)">&#10094;</span>
+                                    <span onclick="plusSlides(1)">&#10095;</span>
+                                </div>
+                            </div>
+
+                            <p>During the end of my time at the Digital Futures Academy, we were tasked with a capstone project.
+                                This project was to create a data analysis dashboard using a dataset of our choice and present this, which would allow me to showcase
+                                my Python, ETL, and Data Engineering skills.
+                                I decided to create an analysis dashboard for spotify, using data retrieved from the 
+                                <a href = "https://developer.spotify.com/documentation/web-api" target="_blank">Spotify Web API</a> 
+                            </p>
+                            <p>The links to the dashboard and the code are below:</p>
+                            <li><a href = "https://hamza-capstone-project.streamlit.app/" target="_blank">Streamlit App</a>
+                                (You may need to "wake up" the website as streamlit sends it to sleep if it hasn't been accessed in a while).</li>
+                            <li><a href = "https://github.com/HamzaKho/capstone_project" target="_blank">ETL GitHub Repo</a></li>
+                            <li><a href = "https://github.com/HamzaKho/capstone_project_streamlit" target="_blank">Streamlit GitHub Repo</a></li>
+                            
+                            <p>I created the dashboard using 
+                                <a href = "https://streamlit.io/" target="_blank">Streamlit</a> 
+                                 which allowed me to create interactive visualisations and publish them using only python code. 
+                            </p>
+                            <p>This is was useful as it allowed me to use the ETL skills I learnt during my time at the Digital Futures Academy as a Data Engineer.
+                            </p>
+                            <h2>How I created it:</h2>
+                            <li>Extract: I used the Spotify Web API to extract the data I needed into a pandas dataframe.</li>
+                            <li>Transform: Using pandas, I transformed the data in various ways, for example by cleaning up song names (like removing features from titles), and adding columns
+                                such as region, and features. These transformations allow me to perform the analysis I wanted to, and keep the data clean.
+                            </li>
+                            <li>Load: I loaded the transformed data into a PostgreSQL database, which is hosted on AWS. I made sure that when loading the data, only new 
+                                updates were added/removed from the table, to reduce the load on the database and prevent data duplication.</li>
+                            <li>The entire ETL process was on a "cron job", meaning it was ran automatically daily, to gather the data over a larger period of time.</li>
+                            <li>Analysis: I used various python libraries, including Matplotlib, Seaborn, and Plotly to create interactive visualisations of the data
+                                to support the narrative I wanted to tell. This was done in a Streamlit app, which allowed me to create a website, using Python alone.
+                                I connected to the database and extracted the data, which was then used to create the visualisations.</li>
+                            </li>
+                            <h2>Results</h2>
+                            <p>The streamlit app can be accessed 
+                                <a href = "https://hamza-capstone-project.streamlit.app/" target="_blank">here</a>
+                                (You may need to "wake up" the website as streamlit sends it to sleep if it hasn't been accessed in a while).</p>
+                            </p>
+                            <p>Although I was able to successfully create an ETL pipeline and extract some insights from Spotify's API successfully,
+                                there are was still area for improvement.
+                            </p>
+                            <li>Unfortunately I was not able to set out my goal of doing a full global analysis of every country/region. This is due to Spotify's
+                                Web API updating and deprecating alot of features, but the relevant documentation had not been updated at the time of the project.
+                                In future I should be sure to research the API more thoroughly, and use quick jupyter notebooks to ensure all endpoints that are necessary are
+                                 still available.
+                            </li>
+                            <li>Although my visualisations are interactive, and the website is responsive, it retrieves data from the database repeatedly every time the user
+                                clicks on something, which makes the website feel slow. This wasn't an issue during testing, as streamlit only acts like this once the app is deployed.
+                                In the future I could study the Streamlit documentation to change this behaviour, as it would significantly improve the responsiveness of my site.
+                            </li>
+                            <p>Despite these shortcomings and areas for future work, my project was still successful in delivering the rest of the requirements I set out
+                                in my <a href="https://github.com/HamzaKho/capstone_project/blob/main/project-plan.md" target="_blank">project plan.</a>
+                                </p>
+                            </p>
+                            <h2>Technologies Used:</h2>
+                            <ul>
+                                <li>Python</li>
+                                <li>Streamlit</li>
+                                <li>Matplotlib</li>
+                                <li>Seaborn</li>
+                                <li>Git</li>
+                                <li>Plotly</li>
+                                <li>Pandas</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <div class="inner">
+                            <section>
+                                <h2>Get in touch</h2>
+                                <form method="post" action="https://formspree.io/f/xyyrdwgz">
+                                    <div class="fields">
+                                        <div class="field half">
+                                            <input type="text" name="name" id="name" placeholder="Name" />
+                                        </div>
+                                        <div class="field half">
+                                            <input type="email" name="email" id="email" placeholder="Email" />
+                                        </div>
+                                        <div class="field">
+                                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send" class="primary" /></li>
+                                    </ul>
+                                </form>
+                            </section>
+                            <section>
+                                <h2>Follow</h2>
+                                <ul class="icons">
+                                    <li><a href="https://github.com/HamzaKho" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                                    <li><a href="https://www.linkedin.com/in/hamza-khokhar-28934a253/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                </ul>
+                            </section>
+                            <ul class="copyright">
+                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
+                        </div>
+                    </footer>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script>
+                let slideIndex = 0;
+                const slides = document.querySelectorAll('.carousel-slide');
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('carousel-active', i === index);
+                    });
+                }
+
+                function plusSlides(n) {
+                    slideIndex = (slideIndex + n + slides.length) % slides.length;
+                    showSlide(slideIndex);
+                }
+                setInterval(() => {
+                    plusSlides(1);
+                }, 5000);
+            </script>
+
+    </body>
+</html>
